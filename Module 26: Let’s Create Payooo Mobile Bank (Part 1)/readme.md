@@ -1,0 +1,1 @@
+1. connect tailwind to html file 
