@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo Home</title>
+    <!-- daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+
+    <!-- tailwind css -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-[#f4f5f7] h-screen">
+    <!-- <h1>Welcome to payoo home</h1> -->
+    <div class="bg-white rounded-b-2xl mb-5">
+        <nav class="min-h-[60px] flex justify-between items-center px-4 py-2 border-b ">
+            <div class="flex justify-center items-center">
+                <div>
+                    <img src="./assets/Group.png" alt="Payoo Logo">
+                </div>
+                <div>
+                    <p class="font-bold text-2xl"><span>$</span><span id="primary-balance">5000</span></p>
+                    <p class="text-gray-400">Available Balance</p>
+                </div>
+            </div>
+            <div>
+                <button class="btn text-gray-500" id="logout-btn">Log Out</button>
+            </div>
+        </nav>
+        <section class="banner p-3 mb-5">
+            <h1 class="text-2xl font-bold text-gray-500">🔥 Welcome to Payoo!</h1>
+            <p class="text-gray-400">Enjoy easy and convenient financial services with us. Cashout charge is low and
+            </p>
+        </section>
+        <section id="features" class=" h-[250px]  p-3 grid grid-cols-3 gap-4 ">
+            <div id="add-money" class="features-btn flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
+                <img src="./assets/wallet1.png" alt="add money">
+                <p>Add Money</p>
+            </div>
+            <div id="cash-out" class="features-btn flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
+                <img src="./assets/wallet1.png" alt="add money">
+                <p>Cash Out</p>
+            </div>
+            <div class="features-btn flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
+                <img src="./assets/wallet1.png" alt="add money">
+                <p>Transfer</p>
+            </div>
+            <div class="features-btn  flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
+                <img src="./assets/wallet1.png" alt="add money">
+                <p>Get Bonus</p>
+            </div>
+            <div class="features-btn flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
+                <img src="./assets/wallet1.png" alt="add money">
+                <p>Pay Bill</p>
+            </div>
+            <div class="features-btn flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
+                <img src="./assets/wallet1.png" alt="add money">
+                <p>Transactions</p>
+            </div>
+        </section>
+    </div>
+    <section class="m-4">
+        <div class="forms text-gray-500 flex justify-between">
+            <h2 class="text-xl font-bold">Latest Payment</h2>
+            <button>View All</button>
+        </div>
+        <div class="forms hidden" id="add-money-form">
+            <h3 class="font-bold mb-2">Add Money</h3>
+            <form action="" id="add-money-form" class="bg-white p-3 rounded-2xl space-y-4">
+                <div>
+                    <h3>Select Bank</h3>
+                    <select id="bank-name" class="select rounded-full w-full bg-gray-100 text-gray-500 outline-none border-gray-300">
+                        <option disabled selected id="selected">Select A Bank</option>
+                        <option>HSBC Bank</option>
+                        <option>MayBank</option>
+                        <option>RSB Bank</option>
+                    </select>
+                </div>
+                <div>
+                    <h3>Enter Account Number</h3>
+                    <input id="account-number" type="text" placeholder="Enter Account Number"
+                        class="$$input outline-none border-gray-300 py-2 px-3 rounded-full w-full bg-gray-100" />
+                </div>
+                <div>
+                    <h3>Enter Amount</h3>
+                    <input id="add-money-amount" type="text" placeholder="Enter Amount"
+                        class="$$input outline-none border-gray-300 py-2 px-3 rounded-full w-full bg-gray-100" />
+                </div>
+                <div>
+                    <h3>Enter Pin</h3>
+                    <input id="pin-number" type="text" placeholder="Enter Pin"
+                        class="$$input outline-none border-gray-300 py-2 px-3 rounded-full w-full bg-gray-100" />
+                </div>
+                <button id="add-money-btn" class="btn w-full rounded-full border-none bg-blue-500 text-white">Add Money</button>
+            </form>
+        </div>
+    </section>
+
+
+
+    <script src="home.js"></script>
+</body>
+
+</html>
