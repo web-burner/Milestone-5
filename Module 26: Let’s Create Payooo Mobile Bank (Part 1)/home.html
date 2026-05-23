@@ -43,15 +43,15 @@
                 <img src="./assets/wallet1.png" alt="add money">
                 <p>Cash Out</p>
             </div>
-            <div class="features-btn flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
+            <div id="transfer" class="features-btn flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
                 <img src="./assets/wallet1.png" alt="add money">
                 <p>Transfer</p>
             </div>
-            <div class="features-btn  flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
+            <div id="bonus" class="features-btn  flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
                 <img src="./assets/wallet1.png" alt="add money">
                 <p>Get Bonus</p>
             </div>
-            <div class="features-btn flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
+            <div id="pay-bill" class="features-btn flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
                 <img src="./assets/wallet1.png" alt="add money">
                 <p>Pay Bill</p>
             </div>
@@ -94,6 +94,110 @@
                         class="$$input outline-none border-gray-300 py-2 px-3 rounded-full w-full bg-gray-100" />
                 </div>
                 <button id="add-money-btn" class="btn w-full rounded-full border-none bg-blue-500 text-white">Add Money</button>
+            </form>
+        </div>
+        <div class="forms hidden" id="cash-out-form">
+            <h3 class="font-bold mb-2">Cash Out</h3>
+            <form action="" id="" class="bg-white p-3 rounded-2xl space-y-4">
+                <div>
+                    <h3>Select Bank</h3>
+                    <select id="cashout-bank-name" class="select rounded-full w-full bg-gray-100 text-gray-500 outline-none border-gray-300">
+                        <option disabled selected id="selected">Select A Bank</option>
+                        <option>HSBC Bank</option>
+                        <option>MayBank</option>
+                        <option>RSB Bank</option>
+                    </select>
+                </div>
+                <div>
+                    <h3>Enter Account Number</h3>
+                    <input id="cashout-account-number" type="text" placeholder="Enter Account Number"
+                        class="$$input outline-none border-gray-300 py-2 px-3 rounded-full w-full bg-gray-100" />
+                </div>
+                <div>
+                    <h3>Enter Amount</h3>
+                    <input id="cashout-amount" type="text" placeholder="Enter Amount"
+                        class="$$input outline-none border-gray-300 py-2 px-3 rounded-full w-full bg-gray-100" />
+                </div>
+                <div>
+                    <h3>Enter Pin</h3>
+                    <input id="cashout-pin-number" type="text" placeholder="Enter Pin"
+                        class="$$input outline-none border-gray-300 py-2 px-3 rounded-full w-full bg-gray-100" />
+                </div>
+                <button id="cash-out-btn" class="btn w-full rounded-full border-none bg-blue-500 text-white">Withdraw Money</button>
+            </form>
+        </div>
+        <div class="forms hidden" id="transfer-form">
+            <h3 class="font-bold mb-2">Transfer Money</h3>
+            <form action="" id="" class="bg-white p-3 rounded-2xl space-y-4">
+                <div>
+                    <h3>Select Bank</h3>
+                    <select id="transfer-bank-name" class="select rounded-full w-full bg-gray-100 text-gray-500 outline-none border-gray-300">
+                        <option disabled selected id="selected">Select A Bank</option>
+                        <option>HSBC Bank</option>
+                        <option>MayBank</option>
+                        <option>RSB Bank</option>
+                    </select>
+                </div>
+                <div>
+                    <h3>Enter Account Number</h3>
+                    <input id="transfer-account-number" type="text" placeholder="Enter Account Number"
+                        class="$$input outline-none border-gray-300 py-2 px-3 rounded-full w-full bg-gray-100" />
+                </div>
+                <div>
+                    <h3>Enter Amount</h3>
+                    <input id="transfer-amount" type="text" placeholder="Enter Amount"
+                        class="$$input outline-none border-gray-300 py-2 px-3 rounded-full w-full bg-gray-100" />
+                </div>
+                <div>
+                    <h3>Enter Pin</h3>
+                    <input id="transfer-pin-number" type="text" placeholder="Enter Pin"
+                        class="$$input outline-none border-gray-300 py-2 px-3 rounded-full w-full bg-gray-100" />
+                </div>
+                <button id="transfer-btn" class="btn w-full rounded-full border-none bg-blue-500 text-white">Transfer</button>
+            </form>
+        </div>
+         <div class="forms hidden" id="bonus-form">
+            <h3 class="font-bold mb-2">Get Bonus</h3>
+            <form action="" id="" class="bg-white p-3 rounded-2xl space-y-4">
+              
+                <div>
+                    <h3>Enter Coupon</h3>
+                    <input id="coupon-number" type="text" placeholder="Enter Coupon"
+                        class="$$input outline-none border-gray-300 py-2 px-3 rounded-full w-full bg-gray-100" />
+                </div>
+                
+                <button id="get-bonus-btn" class="btn w-full rounded-full border-none bg-blue-500 text-white">Get Bonus</button>
+            </form>
+        </div>
+        <div class="forms hidden" id="bill-form">
+            <h3 class="font-bold mb-2">Transfer Money</h3>
+            <form action="" id="" class="bg-white p-3 rounded-2xl space-y-4">
+                <div>
+                    <h3>Select Bill</h3>
+                    <select id="bill-name" class="select rounded-full w-full bg-gray-100 text-gray-500 outline-none border-gray-300">
+                        <option disabled selected id="selected">Select A Bill</option>
+                        <option>Electricity Bill</option>
+                        <option>Water Bill</option>
+                        <option>Gas Bill</option>
+                        <option>Internet Bill</option>
+                    </select>
+                </div>
+                <div>
+                    <h3>Enter User Number</h3>
+                    <input id="bill-user-number" type="text" placeholder="Enter Bill User Number"
+                        class="$$input outline-none border-gray-300 py-2 px-3 rounded-full w-full bg-gray-100" />
+                </div>
+                <div>
+                    <h3>Enter Amount</h3>
+                    <input id="bill-amount" type="text" placeholder="Enter Bill Amount"
+                        class="$$input outline-none border-gray-300 py-2 px-3 rounded-full w-full bg-gray-100" />
+                </div>
+                <div>
+                    <h3>Enter Pin</h3>
+                    <input id="bill-pin-number" type="text" placeholder="Enter Pin"
+                        class="$$input outline-none border-gray-300 py-2 px-3 rounded-full w-full bg-gray-100" />
+                </div>
+                <button id="bill-btn" class="btn w-full rounded-full border-none bg-blue-500 text-white">Pay Now</button>
             </form>
         </div>
     </section>
