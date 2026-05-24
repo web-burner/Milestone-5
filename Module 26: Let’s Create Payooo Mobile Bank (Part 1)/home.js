@@ -44,13 +44,16 @@ function hideForms() {
   const forms = getElements(".forms");
   forms.forEach((form) => form.classList.add("hidden"));
 }
-
-function getData (){
-  console.log()
+function showAlert(val, amount) {
+  alert(`${val} RM${amount} successfully!`);
+  return;
+}
+function getData() {
+  console.log();
 }
 const data = [];
 function storeTransaction(transact) {
-  data.push(transact);
+  data.unshift(transact);
   console.log(data);
   getElement("transaction-container").innerHTML = "";
   data.map((e) => {
@@ -79,6 +82,7 @@ function addMoney() {
     if (addAmount > 0 && typeof addAmount === "number") {
       const newBalance = balance + addAmount;
       setBalance(newBalance);
+      showAlert("Add", addAmount);
       storeTransaction({
         method: bank,
         accountNumber: accountNumber,
@@ -113,21 +117,28 @@ getElement("cash-out").addEventListener("click", (e) => {
 
 getElement("cash-out-btn").addEventListener("click", (e) => {
   e.preventDefault();
-  cashOut("cashout-account-number", "cashout-pin-number", "cashout-amount");
+  const bank = getElement("cashout-bank-name").value;
+  cashOut(
+    "cashout-account-number",
+    "cashout-pin-number",
+    "cashout-amount",
+    bank,
+    "Cash Out",
+  );
   removeInput("cashout-account-number", "cashout-pin-number", "cashout-amount");
 });
 
-function cashOut(account, pin, amount) {
+function cashOut(account, pin, amount, bank, payment) {
   let balance = parseInt(getElement("primary-balance").innerText);
-  const bank = getElement("cashout-bank-name").value;
   const accountNumber = parseInt(getElement(account).value);
   const pinNumber = parseInt(getElement(pin).value);
   const cashOutAmount = parseInt(getElement(amount).value);
-
+  console.log(account, pin, amount, bank, payment);
   if (bank !== "" && accountNumber === validAccount && pinNumber === validPin) {
     if (cashOutAmount > 0 && typeof cashOutAmount === "number") {
       const newBalance = balance - cashOutAmount;
       setBalance(newBalance);
+      showAlert(payment, cashOutAmount);
       storeTransaction({
         method: bank,
         accountNumber: accountNumber,
@@ -151,7 +162,14 @@ getElement("transfer").addEventListener("click", (e) => {
 
 getElement("transfer-btn").addEventListener("click", (e) => {
   e.preventDefault();
-  cashOut("transfer-account-number", "transfer-pin-number", "transfer-amount");
+  const bank = getElement("transfer-bank-name").value;
+  cashOut(
+    "transfer-account-number",
+    "transfer-pin-number",
+    "transfer-amount",
+    bank,
+    "Transferred",
+  );
   // alert('Amount Transfer successfully')
   removeInput(
     "transfer-account-number",
@@ -173,6 +191,11 @@ function getBonus() {
   if (couponNumber === validCoupon) {
     const newBalance = balance + 200;
     setBalance(newBalance);
+    storeTransaction({
+      method: "Bonus",
+      amount: "+" + 200,
+      time: new Date().toLocaleString(),
+    });
     alert("Bonus Added Successfully");
     return;
   } else {
@@ -195,8 +218,13 @@ getElement("pay-bill").addEventListener("click", (e) => {
 getElement("bill-btn").addEventListener("click", (e) => {
   e.preventDefault();
   const billMethod = getElement("bill-name").value;
-  cashOut("bill-user-number", "bill-pin-number", "bill-amount");
-  alert(`${billMethod} paid successfully`);
+  cashOut(
+    "bill-user-number",
+    "bill-pin-number",
+    "bill-amount",
+    billMethod,
+    `${billMethod} Paid`,
+  );
   removeInput("bill-user-number", "bill-pin-number", "bill-amount");
 });
 
