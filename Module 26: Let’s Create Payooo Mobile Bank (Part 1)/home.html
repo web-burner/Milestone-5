@@ -35,43 +35,57 @@
             </p>
         </section>
         <section id="features" class=" h-[250px]  p-3 grid grid-cols-3 gap-4 ">
-            <div id="add-money" class="features-btn flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
+            <div id="add-money"
+                class="features-btn flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
                 <img src="./assets/wallet1.png" alt="add money">
                 <p>Add Money</p>
             </div>
-            <div id="cash-out" class="features-btn flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
+            <div id="cash-out"
+                class="features-btn flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
                 <img src="./assets/wallet1.png" alt="add money">
                 <p>Cash Out</p>
             </div>
-            <div id="transfer" class="features-btn flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
+            <div id="transfer"
+                class="features-btn flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
                 <img src="./assets/wallet1.png" alt="add money">
                 <p>Transfer</p>
             </div>
-            <div id="bonus" class="features-btn  flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
+            <div id="bonus"
+                class="features-btn  flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
                 <img src="./assets/wallet1.png" alt="add money">
                 <p>Get Bonus</p>
             </div>
-            <div id="pay-bill" class="features-btn flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
+            <div id="pay-bill"
+                class="features-btn flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
                 <img src="./assets/wallet1.png" alt="add money">
                 <p>Pay Bill</p>
             </div>
-            <div class="features-btn flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
+            <div id="transaction-form-btn"
+                class="features-btn flex flex-col justify-center items-center border-2 border-gray-200 rounded-2xl">
                 <img src="./assets/wallet1.png" alt="add money">
                 <p>Transactions</p>
             </div>
         </section>
     </div>
     <section class="m-4">
-        <div class="forms text-gray-500 flex justify-between">
-            <h2 class="text-xl font-bold">Latest Payment</h2>
-            <button>View All</button>
+        <div id="transaction-form" class="forms ">
+            <div class="text-gray-500 flex justify-between">
+                <h2 class="text-xl font-bold">Latest Payment</h2>
+                <button>View All</button>
+            </div>
+            <div id="transaction-container" class="bg-white mt-2 w-full p-3 rounded-2xl">
+                <div class=" h-[250px] border-2 p-2 rounded-2xl border-gray-300 flex justify-center items-center">
+                    <p class="font-bold text-2xl text-gray-500">No Transaction Yet</p>
+                </div>
+            </div>
         </div>
         <div class="forms hidden" id="add-money-form">
             <h3 class="font-bold mb-2">Add Money</h3>
             <form action="" id="add-money-form" class="bg-white p-3 rounded-2xl space-y-4">
                 <div>
                     <h3>Select Bank</h3>
-                    <select id="bank-name" class="select rounded-full w-full bg-gray-100 text-gray-500 outline-none border-gray-300">
+                    <select id="bank-name"
+                        class="select rounded-full w-full bg-gray-100 text-gray-500 outline-none border-gray-300">
                         <option disabled selected id="selected">Select A Bank</option>
                         <option>HSBC Bank</option>
                         <option>MayBank</option>
@@ -93,7 +107,8 @@
                     <input id="pin-number" type="text" placeholder="Enter Pin"
                         class="$$input outline-none border-gray-300 py-2 px-3 rounded-full w-full bg-gray-100" />
                 </div>
-                <button id="add-money-btn" class="btn w-full rounded-full border-none bg-blue-500 text-white">Add Money</button>
+                <button id="add-money-btn" class="btn w-full rounded-full border-none bg-blue-500 text-white">Add
+                    Money</button>
             </form>
         </div>
         <div class="forms hidden" id="cash-out-form">
@@ -101,7 +116,8 @@
             <form action="" id="" class="bg-white p-3 rounded-2xl space-y-4">
                 <div>
                     <h3>Select Bank</h3>
-                    <select id="cashout-bank-name" class="select rounded-full w-full bg-gray-100 text-gray-500 outline-none border-gray-300">
+                    <select id="cashout-bank-name"
+                        class="select rounded-full w-full bg-gray-100 text-gray-500 outline-none border-gray-300">
                         <option disabled selected id="selected">Select A Bank</option>
                         <option>HSBC Bank</option>
                         <option>MayBank</option>
@@ -123,7 +139,8 @@
                     <input id="cashout-pin-number" type="text" placeholder="Enter Pin"
                         class="$$input outline-none border-gray-300 py-2 px-3 rounded-full w-full bg-gray-100" />
                 </div>
-                <button id="cash-out-btn" class="btn w-full rounded-full border-none bg-blue-500 text-white">Withdraw Money</button>
+                <button id="cash-out-btn" class="btn w-full rounded-full border-none bg-blue-500 text-white">Withdraw
+                    Money</button>
             </form>
         </div>
         <div class="forms hidden" id="transfer-form">
@@ -131,7 +148,8 @@
             <form action="" id="" class="bg-white p-3 rounded-2xl space-y-4">
                 <div>
                     <h3>Select Bank</h3>
-                    <select id="transfer-bank-name" class="select rounded-full w-full bg-gray-100 text-gray-500 outline-none border-gray-300">
+                    <select id="transfer-bank-name"
+                        class="select rounded-full w-full bg-gray-100 text-gray-500 outline-none border-gray-300">
                         <option disabled selected id="selected">Select A Bank</option>
                         <option>HSBC Bank</option>
                         <option>MayBank</option>
@@ -153,20 +171,22 @@
                     <input id="transfer-pin-number" type="text" placeholder="Enter Pin"
                         class="$$input outline-none border-gray-300 py-2 px-3 rounded-full w-full bg-gray-100" />
                 </div>
-                <button id="transfer-btn" class="btn w-full rounded-full border-none bg-blue-500 text-white">Transfer</button>
+                <button id="transfer-btn"
+                    class="btn w-full rounded-full border-none bg-blue-500 text-white">Transfer</button>
             </form>
         </div>
-         <div class="forms hidden" id="bonus-form">
+        <div class="forms hidden" id="bonus-form">
             <h3 class="font-bold mb-2">Get Bonus</h3>
             <form action="" id="" class="bg-white p-3 rounded-2xl space-y-4">
-              
+
                 <div>
                     <h3>Enter Coupon</h3>
                     <input id="coupon-number" type="text" placeholder="Enter Coupon"
                         class="$$input outline-none border-gray-300 py-2 px-3 rounded-full w-full bg-gray-100" />
                 </div>
-                
-                <button id="get-bonus-btn" class="btn w-full rounded-full border-none bg-blue-500 text-white">Get Bonus</button>
+
+                <button id="get-bonus-btn" class="btn w-full rounded-full border-none bg-blue-500 text-white">Get
+                    Bonus</button>
             </form>
         </div>
         <div class="forms hidden" id="bill-form">
@@ -174,7 +194,8 @@
             <form action="" id="" class="bg-white p-3 rounded-2xl space-y-4">
                 <div>
                     <h3>Select Bill</h3>
-                    <select id="bill-name" class="select rounded-full w-full bg-gray-100 text-gray-500 outline-none border-gray-300">
+                    <select id="bill-name"
+                        class="select rounded-full w-full bg-gray-100 text-gray-500 outline-none border-gray-300">
                         <option disabled selected id="selected">Select A Bill</option>
                         <option>Electricity Bill</option>
                         <option>Water Bill</option>
@@ -197,7 +218,8 @@
                     <input id="bill-pin-number" type="text" placeholder="Enter Pin"
                         class="$$input outline-none border-gray-300 py-2 px-3 rounded-full w-full bg-gray-100" />
                 </div>
-                <button id="bill-btn" class="btn w-full rounded-full border-none bg-blue-500 text-white">Pay Now</button>
+                <button id="bill-btn" class="btn w-full rounded-full border-none bg-blue-500 text-white">Pay
+                    Now</button>
             </form>
         </div>
     </section>
