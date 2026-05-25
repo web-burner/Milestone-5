@@ -54,7 +54,6 @@ function getData() {
 const data = [];
 function storeTransaction(transact) {
   data.unshift(transact);
-  console.log(data);
   getElement("transaction-container").innerHTML = "";
   data.map((e) => {
     const card = document.createElement("div");
@@ -135,7 +134,7 @@ function cashOut(account, pin, amount, bank, payment) {
   const cashOutAmount = parseInt(getElement(amount).value);
   // console.log(account, pin, amount, bank, payment);
   if (bank !== "" && accountNumber === validAccount && pinNumber === validPin) {
-    if(balance <= 0){
+    if(balance <= 0 && balance < cashOutAmount){
       // showAlert('Insufficient Balance')
       alert('Insufficient Balance!')
       return;
