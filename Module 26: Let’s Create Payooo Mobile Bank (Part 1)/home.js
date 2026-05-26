@@ -134,9 +134,9 @@ function cashOut(account, pin, amount, bank, payment) {
   const cashOutAmount = parseInt(getElement(amount).value);
   // console.log(account, pin, amount, bank, payment);
   if (bank !== "" && accountNumber === validAccount && pinNumber === validPin) {
-    if(balance <= 0 && balance < cashOutAmount){
+    if (balance <= 0 && balance < cashOutAmount) {
       // showAlert('Insufficient Balance')
-      alert('Insufficient Balance!')
+      alert("Insufficient Balance!");
       return;
     }
     if (cashOutAmount > 0 && typeof cashOutAmount === "number") {
