@@ -9,12 +9,11 @@ const data = [];
 getElement("service-container").addEventListener("click", (e) => {
   let balance = parseInt(getElement("balance").innerText);
   let heartCount = parseInt(getElement("heart-count").innerText);
-  if (e.target.className.includes("call-btn")) {
-    const hotLine =
-      e.target.parentNode.parentNode.childNodes[5].childNodes[1].innerText;
-    const serviceName =
-      e.target.parentNode.parentNode.childNodes[3].childNodes[3].innerText;
 
+  if (e.target.classList.contains("call-btn")) {
+    const card = e.target.closest(".card");
+    const hotLine = card.querySelector(".hot-line").innerText;
+    const serviceName = card.querySelector(".service-name").innerText;
     if (balance >= 20) {
       const newBalance = balance - 20;
       setInnerText("balance", newBalance);
@@ -30,29 +29,31 @@ getElement("service-container").addEventListener("click", (e) => {
       alert("You Need $20 To Call A Service");
     }
   }
-  if (e.target.className.includes("heart-btn")) {
+  if (e.target.classList.contains("heart-btn")) {
     e.target.classList.add("text-red-500");
-    const newCount = (heartCount += 1);
+    const newCount = heartCount += 1;
     setInnerText("heart-count", newCount);
   }
-  if (e.target.className.includes("copy-btn")) {
-    let copyCount = parseInt(getElement('copy-count').innerText)
-    const copyText =
-      e.target.parentNode.parentNode.childNodes[5].childNodes[1].innerText;
-      navigator.clipboard.writeText(copyText)
-      .then(()=>{
-        const newCopy = copyCount+=1
-        setInnerText('copy-count',newCopy)
-        alert(`${copyText} copied successfully!`)
-      }).catch((err)=>{
-        console.error('Failed to copy text',err)
+  if (e.target.classList.contains("copy-btn")) {
+    let copyCount = parseInt(getElement("copy-count").innerText);
+    const card = e.target.closest(".card");
+    const hotLine = card.querySelector(".hot-line").innerText;
+    navigator.clipboard
+      .writeText(hotLine)
+      .then(() => {
+        const newCopy = copyCount += 1;
+        setInnerText("copy-count", newCopy);
+        alert(`${hotLine} copied successfully!`);
       })
+      .catch((err) => {
+        console.error("Failed to copy text", err);
+      });
   }
 });
 
 function showHistory() {
   getElement("cart-container").innerHTML = "";
-  data.map((e) => {
+  data.forEach((e) => {
     const div = document.createElement("div");
     div.innerHTML = `<div class="flex justify-between items-center bg-gray-100 rounded-lg p-3 mb-2">
                     <div>
